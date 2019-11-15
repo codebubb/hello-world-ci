@@ -5,7 +5,7 @@ class TestServer {
     constructor(port = 8000) {
         this.server = createServer((req, res) => {
             res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify( { hello: 'World' }));
+            res.end(JSON.stringify( { hello: 'World', version: 2}));
             console.log(chalk.green('Received Request'));
         });
         this.port = port;
@@ -22,3 +22,6 @@ class TestServer {
 }
 
 module.exports = { TestServer };
+
+const server = new TestServer(8001);
+server.setServerListening();

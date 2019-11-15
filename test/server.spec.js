@@ -12,7 +12,7 @@ describe('server setup', () => {
 
     it('sets the server up running with a default port', () => {
         const server = new TestServer();
-        expect(server.port).to.be.eql(8001);
+        expect(server.port).to.be.eql(8000);
         expect(server.server).to.be.an('object');
     });
 });
