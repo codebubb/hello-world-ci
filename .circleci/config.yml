@@ -26,3 +26,15 @@ jobs:
         name: Deploy Over SSH
         command: |
           ssh $SSH_USER@SSH_HOST "cd ~/apps/hello-world-ci && git pull origin master"
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
