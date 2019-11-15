@@ -25,7 +25,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh $SSH_USER@SSH_HOST "cd ~/apps/hello-world-ci && git pull origin master"
+            ssh $SSH_USER@$SSH_HOST "cd ~/apps/hello-world-ci && git pull origin master"
 
 workflows:
   version: 2
