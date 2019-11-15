@@ -22,7 +22,7 @@ jobs:
       - add_ssh_keys:
         fingerprints:
           - 63:67:5f:9f:23:cb:b8:b7:0a:f4:3b:62:4f:df:28:26
-      - run
+      - run:
         name: Deploy Over SSH
         command: |
           ssh $SSH_USER@SSH_HOST "cd ~/apps/hello-world-ci && git pull origin master"
