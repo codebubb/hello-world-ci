@@ -15,9 +15,9 @@ jobs:
             paths: 
               - node_modules
             key: v1-dependencies-{{ checksum "package.json" }}
-       - run:
-          name: Tests
-          command: npm test
+        - run:
+            name: Tests
+            command: npm test
   deploy:
     machine:
       enabled: true
