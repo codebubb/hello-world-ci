@@ -8,19 +8,20 @@ describe('server setup', () => {
         const server = new TestServer(8001);
         expect(server.port).to.be.eql(8001);
         expect(server.server).to.be.an('object');
+        server.stopServerListening();
     });
 
     it('sets the server up running with a default port', () => {
         const server = new TestServer();
         expect(server.port).to.be.eql(8000);
-        expect(server.server).to.be.an('object');
+        server.stopServerListening();
     });
 });
 
 describe('server function', () => {
     let server;
     beforeEach(() => {
-        server = new TestServer(8001);
+        server = new TestServer(8002);
         server.setServerListening();
     });
     afterEach(() => {
@@ -28,7 +29,7 @@ describe('server function', () => {
     });
 
     it('responds to get requests', (done) => {
-        http.get('http://localhost:8001', (res) => {
+        http.get('http://localhost:8002', (res) => {
             expect(res.statusCode).to.be.eql(200);
             done();
         });

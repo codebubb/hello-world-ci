@@ -17,11 +17,10 @@ class TestServer {
     }
 
     stopServerListening() {
+        console.log(`Server on ${this.port} stopping...`);
         this.server.close();
     }
 }
 
 module.exports = { TestServer };
 
-const server = new TestServer(8001);
-server.setServerListening();
