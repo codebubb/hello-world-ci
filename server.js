@@ -6,7 +6,7 @@ class TestServer {
         this.server = createServer((req, res) => {
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify( { hello: 'World', version: 3}));
-            console.log(chalk.green('Received Request'));
+            console.log(chalk.green('Received Request:::'));
         });
         this.port = port;
 
